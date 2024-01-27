@@ -2,9 +2,8 @@
 #include <iostream> //  전처리 지시자
 #include<string>
 #include <cassert>
-//더미 연결리스트 구현
 
-//template <typename T>
+
 struct Node {
 	struct Node* next;
 	int data;
@@ -119,6 +118,7 @@ public:
 		(this->list->count)--;
 		return delData;
 	}
+
 	int LCount() {  //있는 노드 개수 반환
 		return this->list->count;
 	}
@@ -132,7 +132,7 @@ public:
 		
 		if (this->list != nullptr) {
 
-			while (this->LFirst(data)) {
+			while (this->LFirst(data)) { //계속 첫 값을 불러와 삭제
 				this->LRemove();
 				
 			}
@@ -151,7 +151,7 @@ int main() {
 	for ( i = 1; i <= N; i++) {
 		list.LPushBack(i);
 	}
-	list.LClear();
+
 
 	i = 1;
 	list.LFirst(data);
